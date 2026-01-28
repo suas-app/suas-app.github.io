@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<style type="text/css">* {cursor: url(https://cur.cursors-4u.net/toons/too-5/too426.cur), auto !important;}</style>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Página Principal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+	    <nav class="navbar navbar-light bg-light">
+           <a class="navbar-brand" href="/">
+               <img src="/images/inicio.png" alt="Inicio" width="30" height="30">
+           </a>
+		   <div sec:authorize="hasRole('ADMIN')"><p style="color: red;">¡Privilegios de administrador!</p></divsec:authorize="hasRole('ADMIN')">
+        </nav>
+        <h1 class="text-center my-5">Bienvenido a Nuestra Aplicación de E-commerce</h1>
+
+        <!-- Botones principales -->
+        <div class="text-center mb-5">
+            <a href="/products" class="btn btn-primary btn-lg me-3">Ver catálogo de productos</a>
+            <a href="/cart" class="btn btn-secondary btn-lg me-3">Ver carrito</a>
+			<a sec:authorize="hasRole('ADMIN')" href="/admin" class="btn btn-warning btn-lg">Administrar productos</a>
+		    <a sec:authorize="!isAuthenticated()" href="/login" class="btn btn-warning btn-lg">Iniciar sesión</a>
+        </div>
+		
+        <!-- Sección de historietas -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header d-flex justify-content-between align-items-center">
+                        <h4 th:text="${nomHistorieta} + ' nº ' + ${numHistorieta}">---</h4>
+						<div class="d-flex align-items-center">
+							<h6 th:text="'Por '+${nomDibujante}"></h6>
+							<img th:src="${dibujante}" class="rounded-circle" style="height: 55px; width: auto; object-fit: contain; display: block;">
+						</div>
+                    </div>
+                    <div class="card-body">
+						<img class="mx-auto d-block" th:src="${historieta}" width="800">
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
