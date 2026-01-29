@@ -1,45 +1,293 @@
 <!DOCTYPE html>
-<style type="text/css">* {cursor: url(https://cur.cursors-4u.net/toons/too-5/too426.cur), auto !important;}</style>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="es">
 <head>
-    <title>Página Principal</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUAS - Socializa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+    </style>
 </head>
-<body>
-    <div class="container">
-	    <nav class="navbar navbar-light bg-light">
-           <a class="navbar-brand" href="/">
-               <img src="/images/inicio.png" alt="Inicio" width="30" height="30">
-           </a>
-		   <div sec:authorize="hasRole('ADMIN')"><p style="color: red;">¡Privilegios de administrador!</p></divsec:authorize="hasRole('ADMIN')">
-        </nav>
-        <h1 class="text-center my-5">Bienvenido a Nuestra Aplicación de E-commerce</h1>
+<body class="bg-gray-50 text-gray-900">
 
-        <!-- Botones principales -->
-        <div class="text-center mb-5">
-            <a href="/products" class="btn btn-primary btn-lg me-3">Ver catálogo de productos</a>
-            <a href="/cart" class="btn btn-secondary btn-lg me-3">Ver carrito</a>
-			<a sec:authorize="hasRole('ADMIN')" href="/admin" class="btn btn-warning btn-lg">Administrar productos</a>
-		    <a sec:authorize="!isAuthenticated()" href="/login" class="btn btn-warning btn-lg">Iniciar sesión</a>
-        </div>
-		
-        <!-- Sección de historietas -->
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header card-header d-flex justify-content-between align-items-center">
-                        <h4 th:text="${nomHistorieta} + ' nº ' + ${numHistorieta}">---</h4>
-						<div class="d-flex align-items-center">
-							<h6 th:text="'Por '+${nomDibujante}"></h6>
-							<img th:src="${dibujante}" class="rounded-circle" style="height: 55px; width: auto; object-fit: contain; display: block;">
-						</div>
-                    </div>
-                    <div class="card-body">
-						<img class="mx-auto d-block" th:src="${historieta}" width="800">
-                   </div>
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                       <img src="suas.png" alt="SUAS" class="w-12 h-12 object-contain">  
+                </div>
+                    <span class="text-xl font-bold tracking-tight">SUAS</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8 font-medium">
+                    <a href="#caracteristicas" class="hover:text-indigo-600 transition">Características</a>
+                    <a href="#equipo" class="hover:text-indigo-600 transition">Equipo</a>
+                    <a href="#capturas" class="hover:text-indigo-600 transition">Capturas</a>
+                    <a href="#" class="bg-indigo-600 text-white px-5 py-2 rounded-full hover:bg-indigo-700 transition shadow-lg shadow-indigo-200">Descargar</a>
+                    <a href="tecnico.html" class="hover:text-indigo-600 transition">Información técnica</a>
                 </div>
             </div>
         </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:flex items-center gap-12">
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <h1 class="text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+                        Mejora tu socialización <span class="text-indigo-600">SUAS</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto lg:mx-0">
+                        La herramienta definitiva para encontrar actividades interesantes y personas con intereses comunes.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <a href="#" class="inline-flex items-center justify-center px-8 py-4 bg-black text-white rounded-xl hover:bg-gray-800 transition shadow-xl">
+                            <i data-lucide="play" class="w-6 h-6 mr-3 fill-current"></i>
+                            <div class="text-left">
+                                <div class="text-xs uppercase">Descárgala en</div>
+                                <div class="text-lg font-semibold leading-none leading-5">Google Play</div>
+                            </div>
+                        </a>
+                        <a href="#caracteristicas" class="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-700 border border-gray-200 rounded-xl hover:bg-gray-50 transition">
+                            Saber más
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 mt-16 lg:mt-0 relative">
+                    <div class="relative mx-auto w-64 h-[520px] bg-gray-900 rounded-[3rem] border-[8px] border-gray-800 shadow-2xl overflow-hidden">
+                        <!-- Placeholder Mockup -->
+                        <div class="absolute inset-0 bg-indigo-50 flex items-center justify-center">
+                            <img src="suas.png" alt="SUAS" class="w-full h-full object-fill">  
+                            <div class="absolute inset-0 flex items-center justify-center text-indigo-400 font-bold opacity-20 transform -rotate-45 text-4xl">DAEMAN ENTERPRISES</div>
+                        </div>
+                    </div>
+                    <!-- Decoración -->
+                    <div class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-indigo-100/50 rounded-full blur-3xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Características -->
+    <section id="caracteristicas" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Por personas, para personas</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">Organiza y participa en actividades creadas por personas, no por empresas.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="p-8 rounded-2xl bg-gray-50 hover:shadow-xl transition duration-300">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-6">
+                        <i data-lucide="Map"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Actividades locales</h3>
+                    <p class="text-gray-600">Encuentra actividades de tu interés en tu entorno.</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-gray-50 hover:shadow-xl transition duration-300">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 mb-6">
+                        <i data-lucide="Users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Comunidades</h3>
+                    <p class="text-gray-600">Apúntate o crea comunidades para actividades de nicho.</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-gray-50 hover:shadow-xl transition duration-300">
+                    <div class="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center text-pink-600 mb-6">
+                        <i data-lucide="layout"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Interfaz Intuitiva</h3>
+                    <p class="text-gray-600">Familiar diseño Material Design.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capturas de Pantalla -->
+    <section id="capturas" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Vistazo rápido</h2>
+                <p class="text-gray-600 text-lg">Echa un vistazo a nuestra aplicación.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="aspect-[9/16] bg-gray-200 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
+                    <img src="suas.png" alt="SUAS" class="w-full h-full object-fill">  
+                </div>
+                <div class="aspect-[9/16] bg-gray-200 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
+                    <img src="suas.png" alt="SUAS" class="w-full h-full object-fill">  
+                </div>
+                <div class="aspect-[9/16] bg-gray-200 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
+                    <img src="suas.png" alt="SUAS" class="w-full h-full object-fill">  
+                </div>
+                <div class="aspect-[9/16] bg-gray-200 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
+                    <img src="suas.png" alt="SUAS" class="w-full h-full object-fill">  
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo / Probar App -->
+    <section class="py-20 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">¿Quieres ver cómo funciona?</h2>
+            <p class="text-indigo-100 text-lg mb-10 max-w-2xl mx-auto">
+                No esperes más. Hemos preparado una versión de prueba interactiva para que experimentes todas las funcionalidades desde tu navegador.
+            </p>
+            <a href="https://www.youtube.com/watch?v=UqFORtFuyN0" class="inline-flex items-center justify-center px-8 py-4 bg-white text-indigo-600 font-bold rounded-xl hover:bg-gray-100 transition shadow-2xl transform hover:-translate-y-1">
+                <i data-lucide="external-link" class="w-5 h-5 mr-2"></i>
+                Probar demo online
+            </a>
+        </div>
+    </section>
+
+    <!-- Equipo -->
+    <section id="equipo" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Conoce a DAEMAN ENTERPRISES</h2>
+                <p class="text-gray-600 text-lg">Los creadores de SUAS</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Miembro 1 -->
+                <div class="text-center">
+                    <div class="w-32 h-32 bg-indigo-100 mx-auto mb-6 flex items-center justify-center overflow-hidden border-4 border-white shadow-lg">
+                        <img src="d.png" alt="Daniel" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold">Daniel</h4>
+                    <p class="text-indigo-600 font-medium mb-3">CEO y desarrollador</p>
+                    <p class="text-gray-600 px-4">Especialista en arquitectura de software con pasión por el ecosistema Android.</p>
+                </div>
+                <!-- Miembro 2 -->
+                <div class="text-center">
+                    <div class="w-32 h-32 bg-purple-100 mx-auto mb-6 flex items-center justify-center overflow-hidden border-4 border-white shadow-lg">
+                        <img src="a.png" alt="Sr. Garrido" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold">Sr. Garrido</h4>
+                    <p class="text-purple-600 font-medium mb-3">Diseño UI/UX</p>
+                    <p class="text-gray-600 px-4">Encargado de todo lo que se ve.</p>
+                </div>
+                <!-- Miembro 3 -->
+                <div class="text-center">
+                    <div class="w-32 h-32 bg-pink-100 mx-auto mb-6 flex items-center justify-center overflow-hidden border-4 border-white shadow-lg">
+                        <img src="e.webp" alt="Emilio" class="w-full h-full object-cover">
+                    </div>
+                    <h4 class="text-xl font-bold">Emilio</h4>
+                    <p class="text-pink-600 font-medium mb-3">Diseño de la aplicación</p>
+                    <p class="text-gray-600 px-4">Planificación y resto del diseño.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Cita de Experto -->
+    <section class="py-24 bg-indigo-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <!-- Decoración de comillas gigantes en el fondo -->
+            <div class="absolute top-0 left-0 -translate-x-4 -translate-y-10 text-indigo-200 opacity-50">
+                <svg width="120" height="120" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C14.9124 8 14.017 7.10457 14.017 6V5C14.017 3.34315 15.3602 2 17.017 2H19.017C20.6739 2 22.017 3.34315 22.017 5V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM2.017 21L2.017 18C2.017 16.8954 2.91243 16 4.017 16H7.017C7.56928 16 8.017 15.5523 8.017 15V9C8.017 8.44772 7.56928 8 7.017 8H4.017C2.91243 8 2.017 7.10457 2.017 6V5C2.017 3.34315 3.36015 2 5.017 2H7.017C8.67386 2 10.017 3.34315 10.017 5V15C10.017 18.3137 7.33071 21 4.017 21H2.017Z" />
+                </svg>
+            </div>
+
+            <div class="relative flex flex-col md:flex-row items-center gap-12">
+                <!-- Foto del Experto -->
+                <div class="w-48 h-48 md:w-64 md:h-64 flex-shrink-0">
+                    <div class="w-full h-full rounded-2xl bg-white p-3 shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
+                        <div class="w-full h-full rounded-xl bg-indigo-100 flex items-center justify-center overflow-hidden">
+                            <img src="h.png" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contenido de la Cita -->
+                <div class="flex-1 text-center md:text-left">
+                    <blockquote class="mb-8">
+                        <p class="text-2xl md:text-3xl font-medium text-gray-900 leading-relaxed italic">
+                            "El nivel de usabilidad de esta aplicación ciertamente se evidencia en su usabilidad."
+                        </p>
+                    </blockquote>
+                    <div>
+                        <h4 class="text-xl font-bold text-gray-900">Dr. Heo Chun</h4>
+                        <p class="text-indigo-600 font-medium">Médico de la corte del rey Seonjo de Chosun</p>
+                    </div>
+                    
+                    <!-- Logo de la empresa del experto (Opcional) -->
+                    <div class="mt-6 flex justify-center md:justify-start opacity-90">
+                        <div class="flex items-center gap-2">
+                            <img src="s.png" alt="Sello de Chosun" class="w-12 h-12 object-contain">
+                            <span class="font-bold tracking-widest text-sm uppercase">허준</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex justify-between items-center border-b border-gray-800 pb-12 mb-12">
+                <div class="flex items-center gap-2 mb-8 md:mb-0">
+                    <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                        <img src="suas.png" alt="SUAS" class="w-12 h-12 object-contain">  
+                    </div>
+                    <span class="text-white text-xl font-bold tracking-tight">SUAS</span>
+                </div>
+                <div class="flex gap-8">
+                    <a href="https://swad.ugr.es" class="hover:text-white transition"><i data-lucide="twitter"></i></a>
+                    <a href="https://swad.ugr.es" class="hover:text-white transition"><i data-lucide="instagram"></i></a>
+                    <a href="https://github.com/suas-app/suas-app.github.io" class="hover:text-white transition"><i data-lucide="github"></i></a>
+                </div>
+            </div>
+            <div class="md:flex justify-between items-center text-sm">
+                <p>&copy; 2026 DAEMAN ENTERPRISES. Ningún derecho reservado.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition">Política de Privacidad</a>
+                    <a href="#" class="hover:text-white transition">Términos de Servicio</a>
+                    <a href="#" class="hover:text-white transition">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Lightbox -->
+    <div id="lightbox" class="fixed inset-0 bg-black/90 z-[100] hidden flex items-center justify-center p-4 cursor-zoom-out">
+        <button class="absolute top-6 right-6 text-white hover:text-indigo-400 transition">
+            <i data-lucide="x" class="w-10 h-10"></i>
+        </button>
+        <img id="lightbox-img" src="" alt="Zoom" class="max-w-full max-h-full rounded-lg shadow-2xl border border-white/10">
     </div>
+
+
+    <script>
+        // Inicializar Lucide Icons
+        lucide.createIcons();
+
+        // Lógica del Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const images = document.querySelectorAll('section img');
+
+        images.forEach(img => {
+            img.classList.add('cursor-zoom-in', 'transition', 'hover:opacity-90');
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Bloquear scroll
+            });
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restaurar scroll
+        });
+    </script>
 </body>
 </html>
