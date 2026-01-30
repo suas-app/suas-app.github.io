@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especificaciones técnicas de SUAS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .tech-gradient {
+            background: linear-gradient(180deg, #111827 0%, #1f2937 100%);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+    <!-- Navegación Simple -->
+    <nav class="bg-white border-b border-gray-100 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <i data-lucide="arrow-left" class="w-5 h-5 group-hover:-translate-x-1 transition"></i>
+                <span class="font-semibold">Volver</span>
+            </a>
+            <div class="text-sm font-bold mono text-indigo-600 tracking-tighter uppercase">Especificaciones técnicas v4.2</div>
+        </div>
+    </nav>
+
+    <!-- Header Técnico -->
+    <header class="py-20 tech-gradient text-white text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-6">Trabajo realizado durante el<span class="text-indigo-400"> desarrollo</span></h1>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                Una vista más técnica de la aplicación.
+            </p>
+        </div>
+    </header>
+
+    <!-- Arquitectura de la información -->
+    <section class="py-24 border-b border-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center gap-16">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <div class="inline-block px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-xs font-bold uppercase mb-4">Diseño</div>
+                    <h2 class="text-3xl font-bold mb-6">Arquitectura de la información</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Nuestra aplicación cuenta con un diseño robusto y eficiente de la arquitectura de la información.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-green-500 flex-shrink-0"></i>
+                            <span>Separación de información.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-green-500 flex-shrink-0"></i>
+                            <span>Diseñado desde cero para nuestra aplicación.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-green-500 flex-shrink-0"></i>
+                            <span>Nomenclatura consistente.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-gray-100 rounded-3xl p-4 shadow-inner">
+                        <img src="dc.svg" alt="AI" class="w-full h-full object-cover rounded-2xl shadow-lg border border-gray-200">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- El wireflow -->
+    <section class="py-24 bg-gray-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex flex-row-reverse items-center gap-16">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <div class="inline-block px-3 py-1 bg-red-100 text-red-600 rounded-full text-xs font-bold uppercase mb-4">Navegación</div>
+                    <h2 class="text-3xl font-bold mb-6">Navegación cuidada</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Hemos diseñado cuidadosamente toda la navegación para que la navegación sea rápida, entendible, y cómoda.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-green-500 flex-shrink-0"></i>
+                            <span>Opciones relevante al contexto.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-green-500 flex-shrink-0"></i>
+                            <span>Navegación intuitiva.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-green-500 flex-shrink-0"></i>
+                            <span>Buscadores.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-white rounded-3xl p-4 shadow-xl border border-gray-100">
+                        <img src="wf.svg" alt="Seguridad" class="w-full h-full object-cover rounded-2xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- El wireflow -->
+    <section class="py-24 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex flex-row-reverse items-center gap-16">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <div class="inline-block px-3 py-1 bg-red-100 text-red-600 rounded-full text-xs font-bold uppercase mb-4">Navegación</div>
+                    <h2 class="text-3xl font-bold mb-6">Herramientas utilizadas</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        En el desarrollo hemos utilizado diversas herramientas de clase profesional.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-xl border border-gray-200">
+                            <div class="text-red-600 font-bold mb-1">Figma</div>
+                            <div class="text-xs text-gray-500 italic">Prototipado</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-gray-200">
+                            <div class="text-red-600 font-bold mb-1">draw.io</div>
+                            <div class="text-xs text-gray-500 italic">Diagramas</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-gray-200">
+                            <div class="text-red-600 font-bold mb-1">Google Docs</div>
+                            <div class="text-xs text-gray-500 italic">Documentación de diseño</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-gray-200">
+                            <div class="text-red-600 font-bold mb-1">GIMP</div>
+                            <div class="text-xs text-gray-500 italic">Diseño gráfico</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-white rounded-3xl p-4 shadow-xl border border-gray-100">
+                        <img src="suas.png" alt="Seguridad" class="w-full h-full object-cover rounded-2xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- nose -->
+    <section class="py-24 bg-gray-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center gap-16">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <div class="inline-block px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-bold uppercase mb-4">Capa 03: Integración Cloud</div>
+                    <h2 class="text-3xl font-bold mb-6">uuuh</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Nose
+                    </p>
+                    <div class="bg-gray-900 rounded-lg p-6 text-indigo-300 mono text-sm overflow-x-auto shadow-2xl">
+                        <pre><code>#include iostream
+help
+</code></pre>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="aspect-square bg-blue-50 rounded-3xl flex items-center justify-center p-8 border-2 border-dashed border-blue-200">
+                             <img src="suas.png" alt="API" class="w-full h-full object-contain">
+                        </div>
+                        <div class="aspect-square bg-gray-50 rounded-3xl flex items-center justify-center p-8 border-2 border-dashed border-gray-200">
+                             <img src="suas.png" alt="Cloud" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex justify-between items-center border-b border-gray-800 pb-12 mb-12">
+                <div class="flex items-center gap-2 mb-8 md:mb-0">
+                    <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                        <img src="suas.png" alt="SUAS" class="w-12 h-12 object-contain">  
+                    </div>
+                    <span class="text-white text-xl font-bold tracking-tight">SUAS</span>
+                </div>
+                <div class="flex gap-8">
+                    <a href="https://swad.ugr.es" class="hover:text-white transition"><i data-lucide="twitter"></i></a>
+                    <a href="https://swad.ugr.es" class="hover:text-white transition"><i data-lucide="instagram"></i></a>
+                    <a href="https://github.com/suas-app/suas-app.github.io" class="hover:text-white transition"><i data-lucide="github"></i></a>
+                </div>
+            </div>
+            <div class="md:flex justify-between items-center text-sm">
+                <p>&copy; 2026 DAEMAN ENTERPRISES. Ningún derecho reservado.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition">Política de Privacidad</a>
+                    <a href="#" class="hover:text-white transition">Términos de Servicio</a>
+                    <a href="#" class="hover:text-white transition">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Lightbox -->
+    <div id="lightbox" class="fixed inset-0 bg-black/90 z-[100] hidden flex items-center justify-center p-4 cursor-zoom-out">
+        <button class="absolute top-6 right-6 text-white hover:text-indigo-400 transition">
+            <i data-lucide="x" class="w-10 h-10"></i>
+        </button>
+        <img id="lightbox-img" src="" alt="Zoom" class="max-w-full max-h-full rounded-lg shadow-2xl border border-white/10">
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // Lógica del Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const images = document.querySelectorAll('section img');
+
+        images.forEach(img => {
+            img.classList.add('cursor-zoom-in', 'transition', 'hover:opacity-90');
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Bloquear scroll
+            });
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restaurar scroll
+        });
+    </script>
+</body>
+</html>
