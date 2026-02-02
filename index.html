@@ -63,13 +63,11 @@
                 </div>
                 <div class="lg:w-1/2 mt-16 lg:mt-0 relative">
                     <div class="relative mx-auto w-64 h-[520px] bg-gray-900 rounded-[3rem] border-[8px] border-gray-800 shadow-2xl overflow-hidden">
-                        <!-- Placeholder Mockup -->
                         <div class="absolute inset-0 bg-indigo-50 flex items-center justify-center">
-                            <img src="suas.png" alt="SUAS" class="w-full h-full object-fill">  
+                            <img src="1.png" alt="SUAS" class="w-full h-full object-fill">  
                             <div class="absolute inset-0 flex items-center justify-center text-indigo-400 font-bold opacity-20 transform -rotate-45 text-4xl">DAEMAN ENTERPRISES</div>
                         </div>
                     </div>
-                    <!-- Decoración -->
                     <div class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-indigo-100/50 rounded-full blur-3xl"></div>
                 </div>
             </div>
@@ -120,13 +118,13 @@
                 <!-- Sidebar (Navegación) -->
                 <div class="md:w-1/4" id="features-sidebar">
                     <div class="flex flex-col space-y-1">
-                        <button onclick="showFeature('actividades')" data-feature-nav="actividades" class="feature-nav-btn active flex items-center gap-3 px-4 py-3 rounded-xl font-semibold transition-all bg-indigo-600 text-white shadow-md">
-                            <i data-lucide="backpack" class="w-5 h-5"></i>
-                            <span>Actividades</span>
-                        </button>
-                        <button onclick="showFeature('mapa')" data-feature-nav="mapa" class="feature-nav-btn flex items-center gap-3 px-4 py-3 rounded-xl font-semibold transition-all text-gray-600 hover:bg-gray-100">
+                        <button onclick="showFeature('mapa')" data-feature-nav="mapa" class="feature-nav-btn active flex items-center gap-3 px-4 py-3 rounded-xl font-semibold transition-all bg-indigo-600 text-white shadow-md">
                             <i data-lucide="map-pinned" class="w-5 h-5"></i>
                             <span>Mapa</span>
+                        </button>
+                        <button onclick="showFeature('actividades')" data-feature-nav="actividades" class="feature-nav-btn flex items-center gap-3 px-4 py-3 rounded-xl font-semibold transition-all text-gray-600 hover:bg-gray-100">
+                            <i data-lucide="backpack" class="w-5 h-5"></i>
+                            <span>Actividades</span>
                         </button>
                         <button onclick="showFeature('comunidades')" data-feature-nav="comunidades" class="feature-nav-btn flex items-center gap-3 px-4 py-3 rounded-xl font-semibold transition-all text-gray-600 hover:bg-gray-100">
                             <i data-lucide="users" class="w-5 h-5"></i>
@@ -154,28 +152,8 @@
                 <!-- Detalle de Características (Contenido) -->
                 <div class="md:w-3/4 bg-white rounded-3xl p-8 border border-purple-100 min-h-[400px]">
                     
-                    <!-- actividades -->
-                    <div id="feature-actividades" class="feature-panel block">
-                        <div class="md:flex gap-8 items-center">
-                            <div class="md:w-1/2">
-                                <h3 class="text-2xl font-bold mb-4">Actividades personalizadas</h3>
-                                <p class="text-gray-600 leading-relaxed mb-6">
-                                    Crea o encuentra toda clase de actividades que cualquier usuario puede descubrir.
-                                </p>
-                                <ul class="space-y-3">
-                                    <li class="flex items-center gap-2 text-sm text-gray-700 font-medium"><i data-lucide="check" class="w-4 h-4 text-indigo-500"></i> Actividades de nicho</li>
-                                    <li class="flex items-center gap-2 text-sm text-gray-700 font-medium"><i data-lucide="check" class="w-4 h-4 text-indigo-500"></i> Aforo personalizable</li>
-                                    <li class="flex items-center gap-2 text-sm text-gray-700 font-medium"><i data-lucide="check" class="w-4 h-4 text-indigo-500"></i> Compromiso</li>
-                                </ul>
-                            </div>
-                            <div class="md:w-1/2 mt-8 md:mt-0">
-                                <img src="suas.png" alt="actividades" class="rounded-2xl shadow-lg border border-white">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Offline Usage -->
-                    <div id="feature-mapa" class="feature-panel hidden">
+                    <!-- Mapa -->
+                    <div id="feature-mapa" class="feature-panel block">
                         <div class="md:flex gap-8 items-center">
                             <div class="md:w-1/2">
                                 <h3 class="text-2xl font-bold mb-4">Descubre en tu entorno</h3>
@@ -189,7 +167,27 @@
                                 </ul>
                             </div>
                             <div class="md:w-1/2 mt-8 md:mt-0">
-                                <img src="suas.png" alt="Offline" class="rounded-2xl shadow-lg border border-white">
+                                <img src="mapa.png" alt="mapa" class="rounded-2xl shadow-lg border border-white">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- actividades -->
+                    <div id="feature-actividades" class="feature-panel hidden">
+                        <div class="md:flex gap-8 items-center">
+                            <div class="md:w-1/2">
+                                <h3 class="text-2xl font-bold mb-4">Actividades personalizadas</h3>
+                                <p class="text-gray-600 leading-relaxed mb-6">
+                                    Crea o encuentra toda clase de actividades que cualquier usuario puede descubrir.
+                                </p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center gap-2 text-sm text-gray-700 font-medium"><i data-lucide="check" class="w-4 h-4 text-indigo-500"></i> Actividades de nicho</li>
+                                    <li class="flex items-center gap-2 text-sm text-gray-700 font-medium"><i data-lucide="check" class="w-4 h-4 text-indigo-500"></i> Aforo personalizable</li>
+                                    <li class="flex items-center gap-2 text-sm text-gray-700 font-medium"><i data-lucide="check" class="w-4 h-4 text-indigo-500"></i> Compromiso</li>
+                                </ul>
+                            </div>
+                            <div class="md:w-1/2 mt-8 md:mt-0">
+                                <img src="actividad.png" alt="actividades" class="rounded-2xl shadow-lg border border-white">
                             </div>
                         </div>
                     </div>
@@ -209,7 +207,7 @@
                                 </ul>
                             </div>
                             <div class="md:w-1/2 mt-8 md:mt-0">
-                                <img src="suas.png" alt="historial" class="rounded-2xl shadow-lg border border-white">
+                                <img src="comunidades.png" alt="historial" class="rounded-2xl shadow-lg border border-white">
                             </div>
                         </div>
                     </div>
@@ -229,7 +227,7 @@
                                 </ul>
                             </div>
                             <div class="md:w-1/2 mt-8 md:mt-0">
-                                <img src="suas.png" alt="patrocinios" class="rounded-2xl shadow-lg border border-white">
+                                <img src="patrocinios.png" alt="patrocinios" class="rounded-2xl shadow-lg border border-white">
                             </div>
                         </div>
                     </div>
@@ -249,12 +247,12 @@
                                 </ul>
                             </div>
                             <div class="md:w-1/2 mt-8 md:mt-0">
-                                <img src="suas.png" alt="resenas" class="rounded-2xl shadow-lg border border-white">
+                                <img src="resenas.png" alt="resenas" class="rounded-2xl shadow-lg border border-white">
                             </div>
                         </div>
                     </div>
 
-                    <!-- historial -->
+                    <!-- historico -->
                     <div id="feature-historial" class="feature-panel hidden">
                         <div class="md:flex gap-8 items-center">
                             <div class="md:w-1/2">
@@ -269,7 +267,7 @@
                                 </ul>
                             </div>
                             <div class="md:w-1/2 mt-8 md:mt-0">
-                                <img src="suas.png" alt="privacidad" class="rounded-2xl shadow-lg border border-white">
+                                <img src="historico.png" alt="historico" class="rounded-2xl shadow-lg border border-white">
                             </div>
                         </div>
                     </div>
@@ -289,7 +287,7 @@
                                 </ul>
                             </div>
                             <div class="md:w-1/2 mt-8 md:mt-0">
-                                <img src="suas.png" alt="comunidades" class="rounded-2xl shadow-lg border border-white">
+                                <img src="pengino.jpg" alt="privacidad" class="rounded-2xl shadow-lg border border-white">
                             </div>
                         </div>
                     </div>
@@ -308,17 +306,17 @@
                 <p class="text-gray-600 text-lg">Echa un vistazo a nuestra aplicación.</p>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="aspect-[9/16] bg-gray-200 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
-                    <img src="suas.png" alt="SUAS" class="w-full h-full object-fill">  
+                <div class="aspect-[4/9] bg-gray-200 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
+                    <img src="2.png" alt="SUAS" class="w-full h-full object-fill">  
                 </div>
-                <div class="aspect-[9/16] bg-gray-200 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
-                    <img src="suas.png" alt="SUAS" class="w-full h-full object-fill">  
+                <div class="aspect-[4/9] bg-gray-200 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
+                    <img src="3.png" alt="SUAS" class="w-full h-full object-fill">  
                 </div>
-                <div class="aspect-[9/16] bg-gray-200 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
-                    <img src="suas.png" alt="SUAS" class="w-full h-full object-fill">  
+                <div class="aspect-[4/9] bg-gray-200 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
+                    <img src="4.png" alt="SUAS" class="w-full h-full object-fill">  
                 </div>
-                <div class="aspect-[9/16] bg-gray-200 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
-                    <img src="suas.png" alt="SUAS" class="w-full h-full object-fill">  
+                <div class="aspect-[4/9] bg-gray-200 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-300">
+                    <img src="5.png" alt="SUAS" class="w-full h-full object-fill">  
                 </div>
             </div>
         </div>
@@ -331,7 +329,7 @@
             <p class="text-indigo-100 text-lg mb-10 max-w-2xl mx-auto">
                 No esperes más. Hemos preparado una versión interactiva de prueba para que experimentes todas las funcionalidades desde tu navegador.
             </p>
-            <a href="https://www.youtube.com/watch?v=UqFORtFuyN0" class="inline-flex items-center justify-center px-8 py-4 bg-white text-indigo-600 font-bold rounded-xl hover:bg-gray-100 transition shadow-2xl transform hover:-translate-y-1">
+            <a href="https://www.figma.com/proto/UwiiR8G2nSEEqcLXILT4NU/PrototipoAvanzadoPreevaluaci%C3%B3n?node-id=4-7&t=OO0akAWNCkmbLkWg-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=4%3A7" class="inline-flex items-center justify-center px-8 py-4 bg-white text-indigo-600 font-bold rounded-xl hover:bg-gray-100 transition shadow-2xl transform hover:-translate-y-1">
                 <i data-lucide="external-link" class="w-5 h-5 mr-2"></i>
                 Probar demo online
             </a>
